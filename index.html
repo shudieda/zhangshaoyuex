@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 1125px;
+            overflow: hidden;
+            height: 2436px;
+        }
+        @font-face {
+            font-family: 苹方香港;
+            src: url("font/苹方香港.ttf");
+        }
+        @font-face {
+            font-family: 苹方日本;
+            src: url("font/苹日.ttf");
+        }
+        @font-face {
+            font-family: 方正黑;
+            src: url("font/方正黑.ttf");
+        }
+        @font-face {
+            font-family: 苹方;
+            src: url("font/苹方.ttf");
+        }
+        @font-face {
+            font-family: 平安金额;
+            src: url("font/平安金额.ttf");
+        }
+        @font-face {
+            font-family: 招商体;
+            src: url("font/招商字体.ttf");
+        }
+
+
+
+        .xq:hover {
+            background-image: url('img/jiaoyixiangqing-xuanzhong.png');
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 219px;
+            z-index: 9999;
+        }
+        .xq img:hover{
+            opacity: 0;
+        }
+
+        .hd:hover {
+            background-image: url('img/dianzihuidan-xuanzhong.png');
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 219px;
+            z-index: 9999;
+        }
+        .hd img:hover{
+            opacity: 0;
+        }
+
+        .jl:hover {
+            background-image: url('img/zhuanzhangjilu-xuanzhong.png');
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 219px;
+            z-index: 9999;
+        }
+        .jl img:hover{
+            opacity: 0;
+        }
+        .yue:hover {
+            background-image: url('img/yue-xuanzhong.png');
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 219px;
+            z-index: 9999;
+        }
+        .yue img:hover{
+            opacity: 0;
+        }
+
+        .sb:hover {
+            background-image: url('img/zhuanzhangshibai-xuanzhong.png');
+            position: absolute;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 219px;
+            z-index: 9999;
+        }
+        .sb img:hover{
+            opacity: 0;
+        }
+
+
+        .yh:hover {
+            color: #FFFFFF;
+        }
+
+
+        #demo {
+            width: 931px; height: 15px;
+            display: flex; align-items: center;
+        }
+
+        #demo .progress {
+            width: 100%; height: 15px; border-radius: 50px;
+            background: rgb(123,113,142);
+        }
+
+        #demo .progress .progress-bar {
+            width: 40%; height: 100%; border-radius: 50px;
+            background: rgb(242,167,108);
+        }
+
+        #demo .progress .progress-bar .progress-thumb {
+            width: 29px; height: 15px;
+            background-image: url('img/taiyangquan-x.png');
+            float: right;
+            position: relative; left: 7px;
+        }
+
+    </style>
+</head>
+<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149)">
+<button onclick="savaData()" style="color: rgb(218,185,149); position: absolute;border: none; padding:5px 5px 5px 5px;font-weight:550;background-color: transparent;border-radius:10px;margin-left:1300px; font-size: 35px;"
+        class="save-img">保存图片
+</button>
+<div class="box">
+    <div style="background-image: url('img/yue-x.png');height: 2436px;width: 1125px;display: flex;position:relative;">
+
+        <div contenteditable class="text2400" style="font-weight:600;font-family: 苹方;position:absolute;display: inline-block;margin-left:234px; top:261px;color: rgb(1,1,1);font-size: 58px;">张三</div>
+
+        <div contenteditable style="font-family: 苹方;position:absolute;display: inline-block;margin-left:230px;top:349px; color: rgb(131,131,131);font-size: 34px;">上次登录</div>
+        <div contenteditable class="text2401 time" style="font-family: 苹方;position:absolute;display: inline-block;margin-left:368px;top:349px; color: rgb(131,131,131);font-size: 34px;"></div>
+
+
+        <div contenteditable class="text2402" style="font-family: 招商体;position:absolute;display: inline-block;margin-left: 92px; width: 100px;text-align: center; top:491px; color: rgb(1,1,1);font-size: 64px;">1</div>
+
+        <div contenteditable class="text2403" style="font-family: 招商体;position:absolute;display: inline-block;margin-left: 372px; width: 100px;text-align: center; top:491px; color: rgb(1,1,1);font-size: 64px;">0</div>
+
+        <div contenteditable class="text2404" style="font-family: 招商体;position:absolute;display: inline-block;margin-left: 652px; width: 100px;text-align: center; top:491px; color: rgb(1,1,1);font-size: 64px;">0</div>
+
+        <div contenteditable class="text2405" style="font-family: 招商体;position:absolute;display: inline-block;margin-left: 932px; width: 100px;text-align: center; top:491px; color: rgb(1,1,1);font-size: 64px;">--</div>
+
+
+
+        <div contenteditable class="text2406" style="font-weight:600;font-family: 招商体;position:absolute;display: inline-block;margin-left:157px;top:1070px; color: rgb(254,254,255);font-size: 72px;">888.00</div>
+
+        <div style="position: absolute;margin-left:auto;right: 115px; top:1070px; ">
+            <div contenteditable class="" style="font-weight:600;font-family: 招商体;display: inline-block;color: rgb(254,254,255);font-size: 72px;">+</div>
+        <div contenteditable class="text2407" style="font-weight:600;font-family: 招商体;display: inline-block;color: rgb(254,254,255);font-size: 72px;">888.00</div>
+        </div>
+
+        <div contenteditable class="text2408" style="font-family: 招商体;position:absolute;display: inline-block;margin-left:152px;top:1607px; color: rgb(1,1,1);font-size: 57px;">26,548.00</div>
+
+        <div style="position: absolute;margin-left:auto;right: 115px; top:1607px; ">
+            <div contenteditable class="" style="font-family: 招商体;display: inline-block;color: rgb(1,1,1);font-size: 57px;background-image: url('img/yue-tubiao-x.png');background-repeat: no-repeat;background-position:top 15px left;padding-left: 45px;"></div>
+        <div contenteditable class="text2409" style="font-family: 招商体;display: inline-block;color: rgb(1,1,1);font-size: 57px;">98,431.00</div>
+        </div>
+
+        <div id="demo" style="position: absolute;top:1716px;left: 97px;border-radius: 40%;">
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-thumb"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div style="position: absolute;left: 1120px;top: -100px;width: 1100px;height: 2000px;">
+
+    <div style="display: inline-block; position: absolute;right: 700px;top: 300px; font-size: 50px;">用户名：
+        <div contenteditable class="text50520"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 50px;width: 800px;background-color: #FFFFFF;">张三</div>
+
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:450px; font-size: 50px;">上次登录：
+        <div contenteditable class="text50521 time1"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 50px;width: 800px;background-color: #FFFFFF;"></div>
+        <button class="" onclick="updateTime()" style="position: absolute;border: 1px solid black;text-align: center; background-color: rgb(239,239,239); width: 140px; left: 910px;top: -10px; font-size: 45px;">刷 新 时 间</button>
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:600px; font-size: 50px;">银行卡：
+        <div contenteditable class="text50522"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 50px;width: 800px;background-color: #FFFFFF;">1</div>
+
+    </div>
+
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:750px; font-size: 50px;">代办：
+        <div contenteditable class="text50523"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 50px;width: 800px;background-color: #FFFFFF;">0</div>
+
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:900px; font-size: 50px;">卡券：
+        <div contenteditable class="text50524"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">0</div>
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:1050px; font-size: 50px;">积分：
+        <div contenteditable class="text50525"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">--</div>
+
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:1200px; font-size: 50px;">总资产：
+        <div contenteditable class="text50526"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">888.00</div>
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:1350px; font-size: 50px;">昨日收益：
+        <div contenteditable class="text50527"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">888.00</div>
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:1500px; font-size: 50px;">本月支出：
+        <div contenteditable class="text50528"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">26548.00</div>
+    </div>
+
+    <div style="display: inline-block; position: absolute;right: 700px;top:1650px; font-size: 50px;">本月收入：
+        <div contenteditable class="text50529"
+             style="display: inline-block;position: absolute;height: 100px;line-height: 100px; font-size: 45px;width: 800px;background-color: #FFFFFF;">98431.00</div>
+    </div>
+
+</div>
+
+<div style="position: absolute;left:2380px;top:150px;width: 500px;height: 2000px;">
+
+    <button class="yh"
+            style="font-weight: 1200;left: 80px; position: absolute;font-size: 65px;background-image:url('img/zhaoshang.png');background-size: 96px; background-repeat: no-repeat;background-position: left;padding-left: 100px;background-color: transparent; border:none;"
+            type="button">招商银行
+    </button>
+
+    <a class="xq" href="http://sblaojiaoshu.com/zhaoshangjyxqx/" style="position: absolute; top:100px;left: 20px;">
+        <img src="img/jiaoyixiangqing.png" style="width: 450px; height: 219px;">
+    </a>
+
+    <a class="yue" href="http://sblaojiaoshu.com/zhaoshangyuex/" style="position: absolute; top:290px;left: 20px;">
+        <img src="img/yue-xuanzhong.png" style="width: 450px; height: 219px;">
+    </a>
+
+    <a class="sb" href="http://sblaojiaoshu.com/zhaoshangzzsbx/" style="position: absolute; top:480px;left: 20px;">
+        <img src="img/zhuanzhangshibai.png" style="width: 450px; height: 219px;">
+    </a>
+
+</div>
+
+<!-- 引入 html2canvas -->
+<script src="html2canvas.js"></script>
+<!-- 引入自行封装的截图插件 -->
+<script src="screen-shot.js"></script>
+
+<script>
+    var ua = navigator.userAgent;
+    if(ua !== "Mozilla/5.0 (Windows NT 10.0; Win64; x64; ed)"){
+        document.querySelector("body").style="display: none;"
+    }
+</script>
+
+<script>
+    let addYh = document.querySelector('.yh')
+    // 获取组件盒子
+    let box = document.querySelector('.box')
+
+    // 获取保存按钮
+    let saveImg = document.querySelector('.save-img')
+
+
+    function test(test) {
+        test.parentNode.parentNode.removeChild(test.parentNode);
+    }
+
+
+    addYh.addEventListener('click', () => {
+        // 1. 创建一条数据
+        let itemDiv = document.createElement('div')
+        itemDiv.innerHTML = "<div style=\"position: absolute;top: 0; width: 2900px;height: 2200px;z-index: 99999;\">\n" +
+            "    <div style=\"position: absolute;width: 2355px;height: 1700px; background-color: cornsilk;top: 4%;z-index: 99998;\">\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/jshdxqslx/\" style=\"position: absolute;left: 60px; top: 100px; background-image: url('img/jianshe.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "           国建设银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/gongshangmxbdzcx/\" style=\"position: absolute;left: 800px; top: 100px; background-image: url('img/gongshang.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            工商银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/pinganzzcgx/\" style=\"position: absolute;left: 1540px; top: 100px; background-image: url('img/pingan.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            平安银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/jiaotongzzcgx/\" style=\"position: absolute;left: 60px; top: 350px; background-image: url('img/jiaotong.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            交通银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/guangdazzcgx/\" style=\"position: absolute;left: 800px; top: 350px; background-image: url('img/guangda.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            光大银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/zhongxinzzcgx/\" style=\"position: absolute;left: 1540px; top: 350px; background-image: url('img/zhongxin.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            中信银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/nonghangzzcgx/\" style=\"position: absolute;left: 60px; top: 600px; background-image: url('img/nonghang.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            农业银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/zhongguozzcggdx/\" style=\"position: absolute;left: 800px; top: 600px; background-image: url('img/zhongguo.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            中国银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/youzhengzzcgx/\" style=\"position: absolute;left: 1540px; top: 600px; background-image: url('img/youzheng.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            邮政银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/zhaoshangjyxqx/\" style=\"position: absolute;left: 60px; top: 850px; background-image: url('img/zhaoshang.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            招商银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/xingyezzcgx/\" style=\"position: absolute;left: 800px; top: 850px; background-image: url('img/xingye.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            兴业银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/pufahkhdx/\" style=\"position: absolute;left: 1540px; top: 850px; background-image: url('img/pufa.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            浦发银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/minshengdzhdx/\" style=\"position: absolute;left: 60px; top: 1100px; background-image: url('img/minsheng.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            民生银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/hubeix/\" style=\"position: absolute;left: 800px; top: 1100px; background-image: url('img/nongxin.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            农村信用社银行\n" +
+            "        </a>\n" +
+            "        <a class=\"nonghang\" href=\"http://sblaojiaoshu.com/huaxiadzhz/\" style=\"position: absolute;left: 1540px; top: 1100px; background-image: url('img/huaxia.png');background-repeat: no-repeat;background-position: left;padding-left: 120px;background-size: 100px; font-size: 80px;text-decoration: none;color: black;\">\n" +
+            "            华夏银行\n" +
+            "        </a>\n" +
+
+            "\n" +
+            "\n" +
+            "    </div>\n" +
+            "    \n" +
+            "</div>" +
+            "<input class='' style='background-color: transparent;border: none;width: 200px; height: 200px; z-index: 99999; font-size:100px;position:absolute;top:100px;left: 2090px;' value='X' type='button' onclick='test(this)'/>"
+
+
+        // 5. 把单条数据添加到盒子中
+        box.appendChild(itemDiv)
+    })
+
+
+    // 点击保存按钮
+    saveImg.addEventListener('click', () => {
+        saveImgFn('微信图片')
+    })
+
+    // 保存图片的方法
+    async function saveImgFn(downloadName) {
+        // 获取需要转换的dom
+        // html2canvas(document.querySelector('.bbx'))
+        //     .then(canvas => {
+        //         let imgUrl = canvas.toDataURL('image/jpg')
+        //         let image = document.createElement('img')
+        //         image.src = imgUrl
+        //         let a = document.createElement('a')
+        //         a.href = imgUrl
+        //         a.download = name // 自定义名称
+        //         a.click()
+        //     })
+
+        // 截图模块
+        let canvasBox = document.querySelector('.box')
+        // 使用自定义方法进行转换
+        await getHtmlImage({canvasBox,downloadName})
+
+    }
+
+</script>
+
+
+<script>
+
+    let text1 = document.querySelector(".text2400")
+    let text2 = document.querySelector(".text50520")
+
+    twoWayBinding(text1, text2)
+    twoWayBinding(text2, text1)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text3 = document.querySelector(".text2401")
+    let text4 = document.querySelector(".text50521")
+
+    twoWayBinding(text3, text4)
+    twoWayBinding(text4, text3)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text5 = document.querySelector(".text2402")
+    let text6 = document.querySelector(".text50522")
+
+    twoWayBinding(text5, text6)
+    twoWayBinding(text6, text5)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text7 = document.querySelector(".text2403")
+    let text8 = document.querySelector(".text50523")
+
+    twoWayBinding(text7, text8)
+    twoWayBinding(text8, text7)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text9 = document.querySelector(".text2404")
+    let text10 = document.querySelector(".text50524")
+
+    twoWayBinding(text9, text10)
+    twoWayBinding(text10, text9)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text11 = document.querySelector(".text2405")
+    let text12 = document.querySelector(".text50525")
+
+    twoWayBinding(text11, text12)
+    twoWayBinding(text12, text11)
+
+    function twoWayBinding(ele1, ele2) {
+        ele1.addEventListener('input', () => {
+            ele2.innerText = ele1.innerText
+        })
+    }
+
+</script>
+
+<script>
+
+    let text13 = document.querySelector(".text2406")
+    let text14 = document.querySelector(".text50526")
+
+    formatAddComma(text14, text13)
+
+    // 添加逗号 - 转格式
+    function formatAddComma(ele11, ele12) {
+        ele11.addEventListener('input', () => {
+            const addCommas = (num) => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            ele12.innerText = addCommas(ele11.innerText)
+        })
+    }
+
+</script>
+
+<script>
+
+    let text15 = document.querySelector(".text2407")
+    let text16 = document.querySelector(".text50527")
+
+    formatAddComma(text16, text15)
+
+    // 添加逗号 - 转格式
+    function formatAddComma(ele11, ele12) {
+        ele11.addEventListener('input', () => {
+            const addCommas = (num) => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            ele12.innerText = addCommas(ele11.innerText)
+        })
+    }
+
+</script>
+
+<script>
+
+    let text17 = document.querySelector(".text2408")
+    let text18 = document.querySelector(".text50528")
+
+    formatAddComma(text18, text17)
+
+    // 添加逗号 - 转格式
+    function formatAddComma(ele11, ele12) {
+        ele11.addEventListener('input', () => {
+            const addCommas = (num) => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            ele12.innerText = addCommas(ele11.innerText)
+        })
+    }
+
+</script>
+
+<script>
+
+    let text19 = document.querySelector(".text2409")
+    let text20 = document.querySelector(".text50529")
+
+    formatAddComma(text20, text19)
+
+    // 添加逗号 - 转格式
+    function formatAddComma(ele11, ele12) {
+        ele11.addEventListener('input', () => {
+            const addCommas = (num) => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            ele12.innerText = addCommas(ele11.innerText)
+        })
+    }
+
+</script>
+
+
+<script>
+    // 需要保存数据的元素
+    let text2400 = document.querySelector('.text2400')
+    let text2401 = document.querySelector('.text2401')
+    let text2102 = document.querySelector('.text2102')
+    let text2403 = document.querySelector('.text2403')
+    let text2404 = document.querySelector('.text2404')
+    let text2405 = document.querySelector('.text2405')
+    let text2406 = document.querySelector('.text2406')
+    let text2407 = document.querySelector('.text2407')
+    let text2408 = document.querySelector('.text2408')
+    let text2409 = document.querySelector('.text2409')
+
+
+    let text50520 = document.querySelector('.text50520')
+    let text50521 = document.querySelector('.text50521')
+    let text50522 = document.querySelector('.text50522')
+    let text50523 = document.querySelector('.text50523')
+    let text50524 = document.querySelector('.text50524')
+    let text50525 = document.querySelector('.text50525')
+    let text50526 = document.querySelector('.text50526')
+    let text50527 = document.querySelector('.text50527')
+    let text50528 = document.querySelector('.text50528')
+    let text50529 = document.querySelector('.text50529')
+    getData()
+
+    // 页面初始化获取文字
+    function getData() {
+        let localText2400 = localStorage.getItem('text2400')
+        let localText2401 = localStorage.getItem('text2401')
+        let localText2102 = localStorage.getItem('text2102')
+        let localText2403 = localStorage.getItem('text2403')
+        let localText2404 = localStorage.getItem('text2404')
+        let localText2405 = localStorage.getItem('text2405')
+        let localText2406 = localStorage.getItem('text2406')
+        let localText2407 = localStorage.getItem('text2407')
+        let localText2408 = localStorage.getItem('text2408')
+        let localText2409 = localStorage.getItem('text2409')
+
+
+        let localText50520 = localStorage.getItem('text50520')
+        let localText50521 = localStorage.getItem('text50521')
+        let localText50522 = localStorage.getItem('text50522')
+        let localText50523 = localStorage.getItem('text50523')
+        let localText50524 = localStorage.getItem('text50524')
+        let localText50525 = localStorage.getItem('text50525')
+        let localText50526 = localStorage.getItem('text50526')
+        let localText50527 = localStorage.getItem('text50527')
+        let localText50528 = localStorage.getItem('text50528')
+        let localText50529 = localStorage.getItem('text50529')
+
+
+        if (localText2400) text2400.innerText = localText2400
+        if (localText2401) text2401.innerText = localText2401
+        if (localText2102) text2102.innerText = localText2102
+        if (localText2403) text2403.innerText = localText2403
+        if (localText2404) text2404.innerText = localText2404
+        if (localText2405) text2405.innerText = localText2405
+        if (localText2406) text2406.innerText = localText2406
+        if (localText2407) text2407.innerText = localText2407
+        if (localText2408) text2408.innerText = localText2408
+        if (localText2409) text2409.innerText = localText2409
+
+
+
+        if (localText50520) text50520.innerText = localText50520
+        if (localText50521) text50521.innerText = localText50521
+        if (localText50522) text50522.innerText = localText50522
+        if (localText50523) text50523.innerText = localText50523
+        if (localText50524) text50524.innerText = localText50524
+        if (localText50525) text50525.innerText = localText50525
+        if (localText50526) text50526.innerText = localText50526
+        if (localText50527) text50527.innerText = localText50527
+        if (localText50528) text50528.innerText = localText50528
+        if (localText50529) text50529.innerText = localText50529
+    }
+
+
+    // 保存数据的方法
+    function savaData() {
+        localStorage.setItem('text2400', text2400.innerText)
+        localStorage.setItem('text2401', text2401.innerText)
+        localStorage.setItem('text2102', text2102.innerText)
+        localStorage.setItem('text2403', text2403.innerText)
+        localStorage.setItem('text2404', text2404.innerText)
+        localStorage.setItem('text2405', text2405.innerText)
+        localStorage.setItem('text2406', text2406.innerText)
+        localStorage.setItem('text2407', text2407.innerText)
+        localStorage.setItem('text2408', text2408.innerText)
+        localStorage.setItem('text2409', text2409.innerText)
+
+
+
+        localStorage.setItem('text50520', text50520.innerText)
+        localStorage.setItem('text50521', text50521.innerText)
+        localStorage.setItem('text50522', text50522.innerText)
+        localStorage.setItem('text50523', text50523.innerText)
+        localStorage.setItem('text50524', text50524.innerText)
+        localStorage.setItem('text50525', text50525.innerText)
+        localStorage.setItem('text50526', text50526.innerText)
+        localStorage.setItem('text50527', text50527.innerText)
+        localStorage.setItem('text50528', text50528.innerText)
+        localStorage.setItem('text50529', text50529.innerText)
+    }
+
+</script>
+<script>
+
+    var slider = {
+        use: function(id) {
+            var self = this;
+            self.slider = document.getElementById(id);
+            self.bar = self.slider.querySelector('.progress-bar');
+            self.thumb = self.slider.querySelector('.progress-thumb');
+            self.slider.addEventListener('mousedown', function(e) {
+                if (e.button == 0) { // 判断点击左键
+                    self.mDown = true;
+                    self.beginX = e.offsetX;
+                    self.positionX = e.offsetX;
+                    self.beginClientX = e.clientX;
+                    self.sliderLong = parseInt(self.getStyle(self.slider, 'width'));
+                    var per = parseInt(self.positionX / self.sliderLong * 100);
+                    self.bar.style.width = per + '%';
+                }
+            });
+            document.addEventListener('mousemove', function(e) {
+                if (self.mDown) {
+                    var moveX = e.clientX - self.beginClientX;
+                    self.positionX = (self.beginX + moveX > self.sliderLong) ? self.sliderLong : (self.beginX + moveX < 0) ? 0 : self.beginX + moveX;
+                    var per = parseInt(self.positionX / self.sliderLong * 100);
+                    self.bar.style.width = per + '%';
+                }
+            });
+            document.addEventListener('mouseup', function(e) {
+                if (e.button == 0) {
+                    self.mDown = false;
+                }
+            });
+        },
+        getStyle: function(obj,styleName){ // 获取元素样式的方法
+            if(obj.currentStyle){
+                return obj.currentStyle[styleName];
+            }else{
+                return getComputedStyle(obj,null)[styleName];
+            }
+        }
+    };
+    slider.use('demo');
+
+</script>
+<script>
+
+    function getTime() {
+        let date = new Date();
+        let year = date.getFullYear();        //年 ,从 Date 对象以四位数字返回年份
+        let month = date.getMonth() + 1;      //月 ,从 Date 对象返回月份 (0 ~ 11) ,date.getMonth()比实际月份少 1 个月
+        let day = date.getDate();             //日 ,从 Date 对象返回一个月中的某一天 (1 ~ 31)
+        let hours = date.getHours();          //小时 ,返回 Date 对象的小时 (0 ~ 23)
+        let minutes = date.getMinutes();      //分钟 ,返回 Date 对象的分钟 (0 ~ 59)
+        let seconds = date.getSeconds();      //秒 ,返回 Date 对象的秒数 (0 ~ 59)
+
+        //获取当前系统时间 ( 不进行 补0 )
+        let currentDate = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+
+        //修改月份格式
+        if (month >= 1 && month <= 9) month = "0" + month;
+        //修改日期格式
+        if (day >= 0 && day <= 9) day = "0" + day;
+        //修改小时格式
+        if (hours >= 0 && hours <= 9) hours = "0" + hours;
+        //修改分钟格式
+        if (minutes >= 0 && minutes <= 9) minutes = "0" + minutes;
+        //修改秒格式
+        if (seconds >= 0 && seconds <= 9) seconds = "0" + seconds;
+
+        //获取当前系统时间 ( 进行 补0 )
+
+        return year + "-" + month + "-" + day;
+    }
+
+    function getTime1() {
+        let date = new Date();
+        let year = date.getFullYear();        //年 ,从 Date 对象以四位数字返回年份
+        let month = date.getMonth() + 1;      //月 ,从 Date 对象返回月份 (0 ~ 11) ,date.getMonth()比实际月份少 1 个月
+        let day = date.getDate();             //日 ,从 Date 对象返回一个月中的某一天 (1 ~ 31)
+        let hours = date.getHours();          //小时 ,返回 Date 对象的小时 (0 ~ 23)
+        let minutes = date.getMinutes();      //分钟 ,返回 Date 对象的分钟 (0 ~ 59)
+        let seconds = date.getSeconds();      //秒 ,返回 Date 对象的秒数 (0 ~ 59)
+
+        //获取当前系统时间 ( 不进行 补0 )
+        let currentDate = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+
+        //修改月份格式
+        if (month >= 1 && month <= 9) month = "0" + month;
+        //修改日期格式
+        if (day >= 0 && day <= 9) day = "0" + day;
+        //修改小时格式
+        if (hours >= 0 && hours <= 9) hours = "0" + hours;
+        //修改分钟格式
+        if (minutes >= 0 && minutes <= 9) minutes = "0" + minutes;
+        //修改秒格式
+        if (seconds >= 0 && seconds <= 9) seconds = "0" + seconds;
+
+        //获取当前系统时间 ( 进行 补0 )
+
+        return year + "-" + month + "-" + day;
+    }
+
+    let oDiv = document.querySelector('.time')
+    let aDiv = document.querySelector('.time1')
+
+    oDiv.innerHTML = getTime()
+    aDiv.innerHTML = getTime1()
+
+    function updateTime() {
+        oDiv.innerHTML = getTime()
+        aDiv.innerHTML = getTime1()
+    }
+
+</script>
+
+<script>
+    /**
+     *
+     * @param min  最小值
+     * @param max  最大值
+     * @returns {number} 返回一个数字
+     */
+    function randomNum(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        //含最大值，含最小值
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    /**
+     *
+     * @param len  需要传入随机生成多少位数
+     * @returns {number} 返回一组数字
+     * @constructor
+     */
+    function randomNumDigit(len) {
+        let nonceStr = ''
+        for (let i = 0; i <= len; i++) {
+            nonceStr += randomNum(0, 9);
+        }
+        return parseInt(nonceStr)
+    }
+
+    console.log(randomNumDigit(20));
+
+    /**
+     *
+     * @param text  需要替换的数字组
+     * @param start 从那个位置开始替换
+     * @param repText 替换的内容
+     * @returns {string}  返回替换后的内容
+     */
+    function replaceNum(text, start, repText) {
+        return text.toString().substr(0, start - 1) + repText + text.toString().substr(repText.length + 1);
+    }
+
+    console.log(replaceNum(randomNumDigit(10), 0, '00000'));
+
+
+    let abDiv = document.querySelector('.random-num2')
+
+    function btn2() {
+        abDiv.innerText = randomNumDigit(10)
+    }
+
+    let abcDiv = document.querySelector('.random-num')
+
+    function btn3() {
+        abcDiv.innerText = replaceNum(randomNumDigit(20), 0, '202200072412122')
+    }
+
+</script>
+<script>
+    // 转换大写 带元整
+    let capitalize1 = document.querySelector('.capitalize1')
+
+    function handleToCapitalize1() {
+        let text1 = document.querySelector('.shu')
+        capitalize1.innerText = convertCurrency1(text1.innerText)
+    }
+
+    function convertCurrency1(money) {
+        //汉字的数字
+        let cnNums = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+        //基本单位
+        let cnIntRadice = ['', '拾', '佰', '仟'];
+        //对应整数部分扩展单位
+        let cnIntUnits = ['', '万', '亿', '兆'];
+        //对应小数部分单位
+        let cnDecUnits = ['角', '分', '毫', '厘'];
+        //整数金额时后面跟的字符
+        let cnInteger = '整';
+        //整型完以后的单位
+        let cnIntLast = '元';
+        //最大处理的数字
+        let maxNum = 999999999999999.9999;
+        //金额整数部分
+        let integerNum;
+        //金额小数部分
+        let decimalNum;
+        //输出的中文金额字符串
+        let chineseStr = '';
+        //分离金额后用的数组，预定义
+        let parts;
+        // 传入的参数为空情况
+        if (money === '') {
+            return '';
+        }
+        money = parseFloat(money)
+        if (money >= maxNum) {
+            return ''
+        }
+        // 传入的参数为0情况
+        if (money === 0) {
+            chineseStr = cnNums[0] + cnIntLast + cnInteger;
+            return chineseStr
+        }
+        // 转为字符串
+        money = money.toString();
+        // indexOf 检测某字符在字符串中首次出现的位置 返回索引值（从0 开始） -1 代表无
+        if (money.indexOf('.') === -1) {
+            integerNum = money;
+            decimalNum = ''
+        } else {
+            parts = money.split('.');
+            integerNum = parts[0];
+            decimalNum = parts[1].substr(0, 4);
+        }
+        //转换整数部分
+        if (parseInt(integerNum, 10) > 0) {
+            let zeroCount = 0;
+            let IntLen = integerNum.length
+            for (let i = 0; i < IntLen; i++) {
+                let n = integerNum.substr(i, 1);
+                let p = IntLen - i - 1;
+                let q = p / 4;
+                let m = p % 4;
+                if (n === '0') {
+                    zeroCount++;
+                } else {
+                    if (zeroCount > 0) {
+                        chineseStr += cnNums[0]
+                    }
+                    zeroCount = 0;
+                    chineseStr += cnNums[parseInt(n)] + cnIntRadice[m];
+                }
+                if (m === 0 && zeroCount < 4) {
+                    chineseStr += cnIntUnits[q];
+                }
+            }
+            // 最后 + 元
+            chineseStr += cnIntLast;
+        }
+        // 转换小数部分
+        if (decimalNum !== '') {
+            let decLen = decimalNum.length;
+            for (let i = 0; i < decLen; i++) {
+                let n = decimalNum.substr(i, 1);
+                if (n !== '0') {
+                    chineseStr += cnNums[Number(n)] + cnDecUnits[i]
+                }
+            }
+        }
+        if (chineseStr === '') {
+            chineseStr += cnNums[0] + cnIntLast + cnInteger;
+        } else if (decimalNum === '') {
+            chineseStr += cnInteger;
+        }
+
+        return chineseStr
+    }
+
+</script>
+</body>
+</html>
